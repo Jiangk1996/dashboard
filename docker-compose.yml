@@ -1,0 +1,14 @@
+version: '1'
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend.dockerfile
+    ports:
+      - "8080:8080"
+  backend:
+    build:
+      context: .
+      dockerfile: backend.dockerfile
+    ports:
+      - "7000:7000"

@@ -10,7 +10,7 @@
     "compile": "tsc",
     "build": "npm-run-all resetFolder compile",
     "start": "node ."
-    },
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -21,7 +21,8 @@
     "koa": "^2.13.4",
     "koa-bodyparser": "^4.3.0",
     "koa2-cors": "^2.0.6",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "pm2": "^5.2.0"
   },
   "devDependencies": {
     "@types/koa": "^2.13.4",

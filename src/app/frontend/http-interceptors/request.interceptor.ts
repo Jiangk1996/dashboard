@@ -10,8 +10,8 @@ import {
 import { catchError, Observable, throwError } from 'rxjs';
 import { environment } from '../environments/environment';
 
-const baseUrl = `${environment.apiUrl}/api/kubediag`;
-// const baseUrl = '/api/kubediag';
+// const baseUrl = `${environment.apiUrl}/api/kubediag`;
+const baseUrl = '/api/kubediag';
 
 @Injectable()
 export class RequestInterceptor implements HttpInterceptor {
