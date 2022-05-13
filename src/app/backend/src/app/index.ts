@@ -14,7 +14,6 @@ app
 app.on('error', (err, ctx: Context) => {
   const status = 500;
   ctx.status = status;
-  console.log(err);
   ctx.body = err;
 });
 export default app;

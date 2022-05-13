@@ -71,7 +71,8 @@
               "browserTarget": "Kubediag:build:production"
             },
             "development": {
-              "browserTarget": "Kubediag:build:development"
+              "browserTarget": "Kubediag:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

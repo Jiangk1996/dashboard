@@ -16,8 +16,6 @@ app
 app.on('error', (err, ctx) => {
     const status = 500;
     ctx.status = status;
-    console.log(err);
     ctx.body = err;
 });
 exports.default = app;
-//# sourceMappingURL=index.js.map

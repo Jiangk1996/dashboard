@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
-    "sourceMap": true,
+    "sourceMap": false,
     "outDir": "../../../dist/backend",
     "strict": true,
     "esModuleInterop": true,

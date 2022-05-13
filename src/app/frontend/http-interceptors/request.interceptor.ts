@@ -8,9 +8,7 @@ import {
   HttpErrorResponse,
 } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
-import { environment } from '../environments/environment';
 
-// const baseUrl = `${environment.apiUrl}/api/kubediag`;
 const baseUrl = '/api/kubediag';
 
 @Injectable()

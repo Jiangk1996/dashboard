@@ -4,6 +4,7 @@ WORKDIR /usr/src/app
 
 # Copy the nodeJs module
 COPY ./src/app/backend/package*.json ./
+COPY ./src/app/backend/.env ./
 
 RUN npm install
 

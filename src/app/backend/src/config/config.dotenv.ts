@@ -1,7 +1,5 @@
 import Dotenv from 'dotenv';
 
-Dotenv.config({
-  path: '.env',
-});
+Dotenv.config();
 
 export default process.env;
