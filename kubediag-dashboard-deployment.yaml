@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubediag-dashboard
+  labels:
+    app: kubediag-dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubediag-dashboard
+  template:
+    metadata:
+      labels:
+        app: kubediag-dashboard
+    spec:
+      containers:
+      - name: node
+        image: jiangkun03/kubediag:backend
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 7000
+      - name: dashboard
+        image: jiangkun03/kubediag:frontend
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
