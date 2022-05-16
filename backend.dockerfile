@@ -3,13 +3,12 @@ FROM node:16
 WORKDIR /usr/src/app
 
 # Copy the nodeJs module
-COPY ./src/app/backend/package*.json ./
-COPY ./src/app/backend/.env ./
+COPY ./src/app/backend/ ./
 
 RUN npm install
 
-COPY ./dist/backend .
+RUN npm run build
 
 EXPOSE 7000
 
-CMD [ "node", "index.js"]
+CMD [ "node", "dist/index.js"]
