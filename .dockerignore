@@ -1,2 +1,12 @@
 node_modules
 npm-debug.log
+
+.husky
+.vscode
+dist
+.editorconfig
+.eslintrc.json
+.gitignore
+.prettierignore
+
+README.md
