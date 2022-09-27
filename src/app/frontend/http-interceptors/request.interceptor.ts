@@ -1,3 +1,4 @@
+import { AppService } from './../app.service';
 /**
  * Copyright 2022 The KubeDiag Authors
  *
@@ -14,6 +15,7 @@
  * limitations under the License.
  */
 
+import { ActivatedRoute } from '@angular/router';
 import { ErrorDialogService } from './../error-dialog/error-dialog.service';
 import { Injectable } from '@angular/core';
 import {
@@ -29,13 +31,19 @@ const baseUrl = '/api/kubediag';
 
 @Injectable()
 export class RequestInterceptor implements HttpInterceptor {
-  constructor(public errorDialogService: ErrorDialogService) {}
+  constructor(
+    public errorDialogService: ErrorDialogService,
+    private appService: AppService
+  ) {}
   intercept(
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
+    const routePrefix = this.appService.getRoutePrefix();
     const req = request.clone({
-      url: `${baseUrl}${request.url}`,
+      url: `${routePrefix ? '/kubediag/' + routePrefix : ''}${baseUrl}${
+        request.url
+      }`,
     });
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse) => {

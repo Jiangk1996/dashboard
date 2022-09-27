@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import { AppService } from './app.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -21,4 +21,8 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor(private appService: AppService) {
+    this.appService.getRoutePrefix();
+  }
+}
